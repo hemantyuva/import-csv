@@ -11,7 +11,7 @@ module TestApp
     config.load_defaults 5.2
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins  "http://5cbb7ccf.ngrok.io"
+        origins  "http://shielded-lake-66109.herokuapp.com","https://shielded-lake-66109.herokuapp.com"
         resource '*', :headers => :any, :methods => :any, :credentials => true
       end
     end
