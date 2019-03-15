@@ -15,7 +15,7 @@ class Api::V1::QuestionsController < Api::ApiController
     else
       @question = Question.new(question_params)
       if @question.save
-        render json: @question
+        render json: {question: @question, active_page: ((Question.all.count/10) rescue 1)}
       else 
         render json: {status: "failed", question: @question.errors}
       end
